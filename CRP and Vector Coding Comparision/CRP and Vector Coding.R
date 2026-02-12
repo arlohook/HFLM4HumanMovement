@@ -24,8 +24,8 @@ VC.SD = apply(vector_coding, 1, sd)
 t2 = seq(0,1, length = 100)
 
 P1 = ggplot()+
-  geom_ribbon(aes(x = t2, ymin = VC.Mean-VC.SD, ymax = VC.Mean+VC.SD), fill = "red", alpha = 0.4)+
-  geom_line(aes(x= t2, y = VC.Mean), lty = 1)+
+  geom_ribbon(aes(x = t2*100, ymin = VC.Mean-VC.SD, ymax = VC.Mean+VC.SD), fill = "red", alpha = 0.4)+
+  geom_line(aes(x= t2*100, y = VC.Mean), lty = 1)+
   theme_light()+
   labs(x = "t", y = "Coupling Angle")
 P1
@@ -70,11 +70,12 @@ CRP.Mean = rowMeans(CRP)
 CRP.SD = apply(CRP, 1, sd)
 
 P2 = ggplot()+
-  geom_ribbon(aes(x = t, ymin = CRP.Mean[22:122]-CRP.SD[22:122], ymax = CRP.Mean[22:122]+CRP.SD[22:122]), fill = "blue", alpha = 0.4)+
-  geom_line(aes(x= t, y = CRP.Mean[22:122]), lty = 1)+
+  geom_ribbon(aes(x = t*100, ymin = CRP.Mean[22:122]-CRP.SD[22:122], ymax = CRP.Mean[22:122]+CRP.SD[22:122]), fill = "blue", alpha = 0.4)+
+  geom_line(aes(x= t*100, y = CRP.Mean[22:122]), lty = 1)+
   theme_light()+
   labs(x = "t", y = "Continuous Relative Phase")
 P2
 
 ggsave("CRP Figure.jpg", dpi = 300, width = 10, height = 10, units = 'cm')
+
 
