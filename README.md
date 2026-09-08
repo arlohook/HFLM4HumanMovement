@@ -1,4 +1,4 @@
-
+# Historical Functional Linear Models for Human Movement
 
 ### Authors: Arlo Hook, Mark Watsford, Paul Wu, Edward Gunning, Giles Hooker, and John Warmenhoven.
 
