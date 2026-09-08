@@ -4,7 +4,7 @@ library(tidyverse)
 library(reshape)
 library(viridis)
 
-setwd("C:/Users/arloh/OneDrive/Documents/PhD/Projects/HFLM for Human Movement/Simulation Study")
+setwd("C:/Users/arloh/OneDrive/Documents/PhD/Projects/HFLM for Human Movement/Github/Simulation Study")
 
 pffr20 = readRDS("./Results/pffr 20 Processed.rds")
 pffr50 = readRDS("./Results/pffr 50 Processed.rds")
@@ -60,8 +60,8 @@ Tiles = ggplot(plotting, aes( x = s, y = t, fill = Beta))+
   geom_tile()+
   theme_light()+
   scale_fill_gradientn(colours = viridis(20),limits = c(min(plotting$Beta), max(plotting$Beta)))+
-  scale_x_continuous(expand = c(0,0))+
-  scale_y_continuous(expand = c(0,0))+
+  scale_x_continuous(expand = c(0,0), labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
+  scale_y_continuous(expand = c(0,0), , labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
   labs(fill = "Value")+
   theme(strip.background = element_rect(fill = "white", colour = "black"), 
         strip.text = element_text(colour = "black", face = 'bold'))+
@@ -78,8 +78,8 @@ TrB = ggplot(B, aes( x = s, y = t, fill = Value))+
   geom_tile()+
   theme_light()+
   scale_fill_gradientn(colours = viridis(20), limits = c(min(plotting$Beta), max(plotting$Beta)))+
-  scale_x_continuous(expand = c(0,0))+
-  scale_y_continuous(expand = c(0,0))+
+  scale_x_continuous(expand = c(0,0), labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
+  scale_y_continuous(expand = c(0,0), labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
   labs(fill = "Value", title = "True")+
   theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 
@@ -108,8 +108,8 @@ Tiles2 = ggplot(plotting2, aes( x = s, y = t, fill = Dif))+
   geom_tile()+
   theme_light()+
   scale_fill_gradient2(high = "red", mid = "white", low = "blue", midpoint = 0)+
-  scale_x_continuous(expand = c(0,0))+
-  scale_y_continuous(expand = c(0,0))+
+  scale_x_continuous(expand = c(0,0), labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
+  scale_y_continuous(expand = c(0,0), labels = c("0", "0.25", "0.5", "0.75", "1"), breaks = c(0,0.25, 0.5, 0.75, 1))+
   labs(fill = "Value")+
   theme(strip.background = element_rect(fill = "white", colour = "black"), 
         strip.text = element_text(colour = "black", face = 'bold'))+
